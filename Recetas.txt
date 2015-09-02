@@ -1,0 +1,93 @@
+
+Comprimir y descomprimir	PDF	Imprimir	E-mail
+Escrito por José R Sosa	  
+Domingo, 19 de Agosto de 2012 07:10
+Compendio de formatos de compresión y su manejo por línea de comandos.
+.tar (tar)
+
+Empaquetar:    
+tar cvf archivo.tar /path/*
+Desempaquetar:    
+tar xvf archivo.tar
+Ver el contenido (sin extraer):   
+tar tvf archivo.tar
+.tar.gz – .tar.z – .tgz (tar con gzip)
+
+Empaquetar y comprimir:    
+tar czvf archivo.tar.gz /archivo/mayo/*
+Desempaquetar y descomprimir:    
+tar xzvf archivo.tar.gz
+Ver el contenido (sin extraer):   
+tar tzvf archivo.tar.gz
+.tar.xz - .txz (nuevas versiones de slackware)
+
+Desempaquetar y descomprimir:    
+tar xvf archivo.tar.xz
+tar xvf archivo.txz 
+.gz (gzip)
+Comprimir:    
+gzip -q archivo
+El archivo lo comprime y lo renombra como “archivo.gz”. Si se le pasa como parámetro varios archivos (o un comodín), este comanda comprimirá todos los archivos de forma separada, generando un .gz por cada uno.
+Descomprimir:    
+gzip -d archivo.gz
+o también puede usarse:
+gunzip archivo.gz
+
+El archivo lo descomprime y lo deja como “archivo”. Nota: gzip solo comprime archivos, no directorios.
+
+.bz2 (bzip2)
+
+Comprimir:
+bzip2 archivo
+El archivo lo comprime y lo renombra como “archivo.bz2″.
+Descomprimir:    
+bzip2 -d archivo.bz2
+El archivo lo descomprime y lo deja como “archivo”. Nota: bzip2 solo comprime archivos, no directorios. 
+.tar.bz2 (tar con bzip2)
+
+Comprimir:     
+tar -c archivos | bzip2 > archivo.tar.bz2
+Descomprimir:     
+bzip2 -dc archivo.tar.bz2 | tar -xv
+o también puede usarse:
+tar jvxf archivo.tar.bz2 (versiones recientes de tar)
+Ver contenido:    
+bzip2 -dc archivo.tar.bz2 | tar -tv
+.zip (zip)
+
+Comprimir:     
+zip archivo.zip /mayo/archivos
+Descomprimir:     
+unzip archivo.zip
+Ver contenido:     
+unzip -v archivo.zip
+.lha (lha)
+
+Comprimir :    
+lha archivo.lha /mayo/archivos
+Descomprimir:     
+lha -x archivo.lha
+Ver contenido:     
+lha -v archivo.lha
+lha -l archivo.lha
+
+.zoo (zoo)
+
+Comprimir:     
+zoo -a archivo.zoo /mayo/archivos
+Descomprimir:     
+zoo -x archivo.zoo
+Ver contenido:     
+zoo -v archivo.zoo
+zoo -L archivo.zoo
+
+.rar (rar)
+
+Comprimir:     
+rar -a archivo.rar /mayo/archivos
+Descomprimir:     
+rar -x archivo.rar
+Ver contenido:     
+rar -v archivo.rar
+rar -l archivo.rar
+unrar  archivo.rar
